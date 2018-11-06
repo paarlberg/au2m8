@@ -99,17 +99,19 @@ expect -exact "*"
 send -- "0"
 expect -exact "*"
 send -- "5"
-expect -exact "*"
-send -- "\r"
-
 sleep 1
-send -- "$IMO-ME1\r"
+#expect -exact "*"
+send -- "\r"
 
 #System Name [Cisco_80:40:80] (31 characters max):
 sleep 1
+send -- "$IMO-ME1\r"
+
+#Enter Country Code list (enter 'help' for a list of countries) [US]: 
+sleep 1
 send -- "DK\r"
 
-#Configure a NTP server now? \[YES\]\[no\]:
+#Configure a NTP server now? [YES][no]:
 sleep 1
 send -- "YES\r"
 
